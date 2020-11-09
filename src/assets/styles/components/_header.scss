@@ -1,0 +1,20 @@
+header {
+    display: flex;
+    background: $primary-color;
+    padding: rem-calc(20);
+    height: $headerHeight;
+    position: relative;
+
+    .logo {
+        width: rem-calc(175);
+        margin-right: rem-calc(20);
+    }
+
+    h1 {
+        color: $white-color;
+        font-family: 'Cuprum';
+        font-size: rem-calc(25);
+        position: relative;
+        top: rem-calc(-3);
+    }
+}

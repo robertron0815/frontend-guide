@@ -1,0 +1,65 @@
+.sidebar {
+    min-height: calc(100vh - #{$headerHeight});
+    padding-top: rem-calc(30);
+}
+
+.navigation {
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+    }
+
+    .level-1 {
+        
+        a {
+            display: block;
+            height: rem-calc(35);
+            padding: rem-calc(10) rem-calc(5) rem-calc(0);
+            text-decoration: none;
+
+            span {
+                position: relative;
+                padding-bottom: rem-calc(2);
+                
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                    height: 1px;
+                    width: 0;
+                    background: $primary-color;
+                    transition: width 0.25s ease-in-out;
+                }
+            }
+
+            &:hover {
+                span {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        > a {
+            font-weight: 700;
+
+            .ng-fa-icon {
+                padding-right: rem-calc(10);
+            }
+        }
+    }
+
+    .level-2 {
+        padding-left: rem-calc(25);
+    }
+}

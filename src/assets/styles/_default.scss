@@ -1,0 +1,30 @@
+html, body { height: 100%; }
+
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-size: rem-calc(14);
+    color: $primary-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cuprum';
+}
+
+a {
+    color: $primary-color;
+}
+
+body .container {
+    max-width: initial;
+}
+
+.content {
+    padding-top: rem-calc(26);
+
+    ul {
+        li {
+            padding: rem-calc(8) 0;
+        }
+    }
+}
