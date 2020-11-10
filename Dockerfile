@@ -1,12 +1,17 @@
 # stage 1
 
-FROM node:alpine AS my-app-build
-WORKDIR /app
-COPY . .
-RUN npm ci && npm run build
+FROM node:alpine AS compile-image
 
-# stage 2
+WORKDIR /opt/ng
+COPY ./package.json ./
+RUN npm install
 
-FROM nginx:alpine
-COPY --from=my-app-build /app/dist/frontendGuide /usr/share/nginx/html
-EXPOSE 80
+ENV PATH="./node_modules/.bin:$PATH" 
+
+COPY . ./
+RUN ng build --prod
+
+FROM nginx
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+COPY --from=compile-image /opt/ng/dist/frontendGuide /usr/share/nginx/html
+
