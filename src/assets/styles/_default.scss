@@ -21,10 +21,37 @@ body .container {
 
 .content {
     padding-top: rem-calc(26);
+    max-width: rem-calc(850);
 
     ul {
         li {
             padding: rem-calc(8) 0;
+        }
+    }
+
+    .content-block {
+        padding-bottom: rem-calc(30);
+    }
+}
+
+.margin-standard {
+    margin: rem-calc(20) 0;
+}
+
+
+.button--cta {
+    background: #ffffff;
+    color: #000000;
+    padding: 5px 10px;
+
+    &.button--cta__green {
+        background: green;
+    }
+
+    &.button--cta__icon {
+        &:before {
+            content: '&foo';
+            padding-right: 10px;
         }
     }
 }

@@ -1,0 +1,95 @@
+<h2>CSS / SCSS Coding Guideline</h2>
+
+<p>Sass or SCSS was developed to maintain an overview in larger projects. In addition come various features and extras
+    that extend CSS. There is also a risk of writing confusing code if you don't follow certain rules.</p>
+
+<img src="/assets/images/scss-graph.svg" alt="overview scss to css" class="margin-standard">
+
+<div class="content-block">
+    <h3>1. Valid and readable code</h3>
+
+    <p>The fundamental guidelines for css is written here:</p>
+    <ul>
+        <li><a href="https://google.github.io/styleguide/htmlcssguide.html#CSS" target="_blank" rel="noopener noreferrer">
+            Google Coding Guidlines
+        </a></li>
+        <li>4 spaces block indentation</li>
+    </ul>
+</div>
+
+<div class="content-block">
+    <h3>2. SCSS best practice</h3>
+    <p>It's not recommended to use scss-files inside of angular components. On the one hand, there is always a risk to
+        write
+        redundant code. On the other hand you need to include special setting or mixin files for every component file.
+        <br />If you use the way that is shown below, you need to import the files only one time and there are no
+        duplicate
+        code.
+    </p>
+
+    <ul>
+        <li>there are one style-file for the whole project, whichs includes all component- and setting-files:
+            <ul>
+                <li>Angular: style.scss</li>
+                <li>React: app.scss</li>
+            </ul>
+        </li>
+        <li>create one scss file per module/component (if neccessary)
+            <ul>
+                <li>create a structure like components/mixins...</li>
+                <li>naming file: "_compontent.scss"</li>
+                <li>import in style.scss as "@import 'assets/styles/components/header';"</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <p>scss file structure:</p>
+            <img src="/assets/images/scss-struktur.JPG" alt="scss file strcture">
+        </div>
+        <div class="col-12 col-md-6">
+            <p>scss file import:</p>
+            <img src="/assets/images/scss-import.JPG" alt="scss import file">
+        </div>
+    </div>
+
+</div>
+
+<div class="content-block">
+    <h3>3. Units and values</h3>
+    <p>Best practice for font-sizes is to set the value by the rem-unit. The rem-value is relative to the html or body
+        font-size (default 16px) and could be scaled very easliy. For better reading you can use the rem-calc-mixin,
+        which you can find in this repository (asstes/styles/mixins/_rem-calc.scss).</p>
+
+    <p>Example:<br />font-size: rem-calc(14px); or just<br />font-size: rem-calc(14);</p>
+
+    <p>For container you can use absolute values like px or relative values like %, vh, vw,...</p>
+</div>
+
+<div class="content-block">
+    <h3>4. Naming</h3>
+    <p>A good naming convention will tell you and your team:</p>
+    <ul>
+        <li>what type of thing a class does</li>
+        <li>where a class can be used</li>
+        <li>what (else) a class might be related to</li>
+    </ul>
+
+    <p>Class names are divided by hyphens "-". Camelcase, PascalCase and underscores* are not allowed to use.<br />*
+        Except the usage in BEM.</p>
+</div>
+
+<div class="content-block row">
+    <div class="col-6"><h3>4.1 BEM - Block Element Modifier</h3>
+        <p>In large projects it is recommended to use the BEM-naming</p>
+    
+        <ul>
+            <li>Block: The sole root of the component</li>
+            <li>Element: A component part of the Block</li>
+            <li>Modifier: A variant or extension of the Block</li>
+        </ul></div>
+    <div class="col-6">
+        <img src="assets/images/bem-example.JPG" alt="BEM naming example">
+    </div>
+</div>
