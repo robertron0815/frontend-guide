@@ -1,1 +1,82 @@
-<p>js works!</p>
+<h2>JavaScript / Typescript Coding Guideline</h2>
+
+<div class="content-block">
+    <h3>1. Naming</h3>
+    <ul>
+        <li>variable and function names written as camelCase
+            <ul>
+                <li>all names start with a letter</li>
+            </ul>
+        </li>
+        <li>global variables/constants written in UPPERCASE</li>
+    </ul>
+</div>
+
+<div class="content-block">
+    <h3>2. Spaces around operators</h3>
+    <p>Always put spaces around operators ( = + - * / ), and after commas.</p>
+</div>
+
+<div class="content-block">
+    <h3>3. Code indentation</h3>
+    <p>Always use 2 spaces for indentation of code blocks</p>
+</div>
+
+<div class="content-block">
+    <h3>4. Statement rules</h3>
+    <ul>
+        <li>always end a simple statement with a semicolon</li>
+        <li>put the opening bracket at the end of the first line</li>
+        <li>use one space before the opening bracket</li>
+        <li>put the closing bracket on a new line, without leading spaces</li>
+    </ul>
+
+    <div class="row">
+        <div class="col-6">
+            <img src="/assets/images/js-statement-rules-1.JPG" alt="JS Statement Rules"/>
+        </div>
+        <div class="col-6">
+            <img src="/assets/images/js-statement-rules-2.JPG" alt="JS Statement Rules"/>
+        </div>
+    </div>
+</div>
+
+<div class="content-block">
+    <h3>5. Line length</h3>
+    <p>
+        For readability, avoid lines longer than 120 characters.<br/>
+        If a JavaScript statement does not fit on one line, the best place to break it, is after an operator or a comma.
+    </p>
+</div>
+
+<div class="content-block">
+    <h3>6. Declarations</h3>
+    <ul>
+        <li>Use let instead of var to define a variable. It's impossible to define the same variable multiple times.</li>
+        <li>Use const if the variable (or constant) don't change it's value.</li>
+    </ul>
+    <img src="/assets/images/js-declarations.JPG" alt="JS declarations" width="800"/>
+</div>
+
+<div class="content-block">
+    <h3>7. Comments</h3>
+    <ul>
+        <li>add a doctype on every function with a short description:
+            <ul>
+                <li>what the function does</li>
+                <li>which params are expected (not needed if the params are declared in typescript)</li>
+            </ul>
+        </li>
+        <li>if the code is not easy to read, then write the code more easy or add short comment</li>
+    </ul>
+    <img src="/assets/images/js-comments.JPG" alt="JS declarations" width="700"/>
+    <p>add param type either in doctype or at the param itself (typescript)</p>
+</div>
+
+<div class="content-block">
+    <h3>8. Linting</h3>
+    <ul>
+        <li>add TS Lint for Typescript</li>
+        <li>add ES Lint for JavaScript</li>
+    </ul>
+</div>

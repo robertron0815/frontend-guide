@@ -11,13 +11,13 @@
         </li>
         <li>120 chars per line
             <ul>
-                <li>settings.json => "editor.rulers": [ 120 ]</li>
+                <li>settings.json =&gt; "editor.rulers": [ 120 ]</li>
             </ul>
         </li>
-        <li>closing selfclosing-tags uniformly or not <br> / <br/></li>
+        <li>closing selfclosing-tags uniformly</li>
         <li>use automatic code formatting (only for new projects!)
             <ul>
-                <li>settings.json => "editor.formatOnSave": false/true</li>
+                <li>settings.json =&gt; "editor.formatOnSave": false/true</li>
             </ul>
         </li>
         <li>organize DOM-Elements:
@@ -25,7 +25,7 @@
                 <li>rather use semantic HTML5-elements instead of just a "div"</li>
                 <li>ask yourself if you need a block-element or not
                     <ul>
-                        <li>(span {{"{display: block}"}} => just div)</li>
+                        <li>(span {{"{display: block}"}} =&gt; just div)</li>
                     </ul>
                 </li>
             </ul>
@@ -80,14 +80,38 @@
 <div class="content-block">
     <h3>5. Validation</h3>
     <ul>
-        <li>Use a validation tool in your IDE or in your browser
-
+        <li>use htmlhint for your projects
             <ul>
-                <li>Chrome: <a href="https://chrome.google.com/webstore/detail/html-validator/mpbelhhnfhfjnaehkcnnaknldmnocglk/related?hl=de">Html Validator</a></li>
-                <li>Firefox: <a href="https://addons.mozilla.org/de/firefox/addon/html-validator/">Html Validator</a></li>
+                <li>find here: 
+                    <a href="https://htmlhint.com/docs/user-guide/getting-started" target="_blank">htmlhint</a>
+                </li>
+                <li>npm install --save-dev htmlhint</li>
+                <li>add .htmlhintrc file to your root folder (following example for angular project)
+                    <pre>
+                    &#x0007B;
+                        "attr-lowercase": false,
+                        "attr-no-duplication": true,
+                        "attr-unsafe-chars": true,
+                        "attr-value-double-quotes": true,
+                        "doctype-first": false,
+                        "doctype-html5": true,
+                        "id-class-ad-disabled": true,
+                        "id-class-value": false,
+                        "id-unique": false,
+                        "inline-style-disabled": true,
+                        "space-tab-mixed-disabled": "space2",
+                        "spec-char-escape": true,
+                        "src-not-empty": true,
+                        "style-disabled": true,
+                        "tag-pair": true,
+                        "tag-self-close": true,
+                        "tagname-lowercase": true,
+                        "title-require": true
+                    &#x0007D;
+                    </pre>
+                </li>
+                <li>run test with: npx htmlhint 'src/app/**/*.html'<br/>or add it to package.json to run with npm</li>
             </ul>
         </li>
-
-        <li>Validation plugin for VS Code</li>
     </ul>
 </div>

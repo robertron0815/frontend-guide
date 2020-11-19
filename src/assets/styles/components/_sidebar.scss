@@ -41,7 +41,8 @@
                 }
             }
 
-            &:hover {
+            &:hover,
+            &.active-link {
                 span {
                     &:after {
                         width: 100%;
