@@ -30,7 +30,11 @@ body .container {
     }
 
     .content-block {
-        padding-bottom: rem-calc(30);
+        padding-bottom: rem-calc(40);
+
+        h3 {
+            margin-top: 0;
+        }
     }
 }
 

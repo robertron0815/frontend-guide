@@ -24,30 +24,38 @@
             padding: rem-calc(10) rem-calc(5) rem-calc(0);
             text-decoration: none;
 
-            span {
-                position: relative;
-                padding-bottom: rem-calc(2);
-                
-                &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    bottom: -1px;
-                    height: 1px;
-                    width: 0;
-                    background: $primary-color;
-                    transition: width 0.25s ease-in-out;
+            &:not(.disabled) {
+
+                span {
+                    position: relative;
+                    padding-bottom: rem-calc(2);
+                    
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        bottom: -1px;
+                        height: 1px;
+                        width: 0;
+                        background: $primary-color;
+                        transition: width 0.25s ease-in-out;
+                    }
+                }
+
+                &:hover,
+                &.active-link {
+                    span {
+                        &:after {
+                            width: 100%;
+                        }
+                    }
                 }
             }
 
-            &:hover,
-            &.active-link {
-                span {
-                    &:after {
-                        width: 100%;
-                    }
-                }
+            &.disabled {
+                cursor: text;
+                color: rgba(0, 0, 0, 0.5);
             }
         }
 

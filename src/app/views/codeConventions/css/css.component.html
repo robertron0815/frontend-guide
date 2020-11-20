@@ -3,16 +3,17 @@
 <p>Sass or SCSS was developed to maintain an overview in larger projects. In addition come various features and extras
     that extend CSS. There is also a risk of writing confusing code if you don't follow certain rules.</p>
 
-<img src="/assets/images/scss-graph.svg" alt="overview scss to css" class="margin-standard"/>
+<img src="/assets/images/scss-graph.svg" alt="overview scss to css" class="margin-standard" />
 
 <div class="content-block">
     <h3>1. Valid and readable code</h3>
 
     <p>The fundamental guidelines for css is written here:</p>
     <ul>
-        <li><a href="https://google.github.io/styleguide/htmlcssguide.html#CSS" target="_blank" rel="noopener noreferrer">
-            Google Coding Guidlines
-        </a></li>
+        <li><a href="https://google.github.io/styleguide/htmlcssguide.html#CSS" target="_blank"
+                rel="noopener noreferrer">
+                Google Coding Guidlines
+            </a></li>
         <li>4 spaces block indentation</li>
     </ul>
 </div>
@@ -49,7 +50,7 @@
             <img src="/assets/images/scss-struktur.JPG" alt="scss file strcture" />
         </div>
         <div class="col-12 col-md-6">
-            <p>scss file import:</p>
+            <p>style.scss: file import</p>
             <img src="/assets/images/scss-import.JPG" alt="scss import file" />
         </div>
     </div>
@@ -64,7 +65,7 @@
 
     <p>Example:<br />font-size: rem-calc(14px); or just<br />font-size: rem-calc(14);</p>
 
-    <p>For container you can use absolute values like px or relative values like %, vh, vw,...</p>
+    <p>For container you can use absolute values like px or relative values like %, vh, vw, rem...</p>
 </div>
 
 <div class="content-block">
@@ -81,15 +82,34 @@
 </div>
 
 <div class="content-block row">
-    <div class="col-6"><h3>4.1 BEM - Block Element Modifier</h3>
+    <div class="col-6">
+        <h3>4.1 BEM - Block Element Modifier</h3>
         <p>In large projects it is recommended to use the BEM-naming</p>
-    
+
         <ul>
             <li>Block: The sole root of the component</li>
             <li>Element: A component part of the Block</li>
             <li>Modifier: A variant or extension of the Block</li>
-        </ul></div>
+        </ul>
+    </div>
     <div class="col-6">
-        <img src="assets/images/bem-example.JPG" alt="BEM naming example" />
+        <img src="assets/images/scss-bem.JPG" alt="BEM naming example" />
+    </div>
+</div>
+
+<div class="content-block row">
+    <div class="col-6">
+        <h3>5 Mobile first</h3>
+        <p>Mobile first means that we scale our application design from small to large. This concept provides that the
+            version optimized for mobile devices is created first and successive extensions take place.</p>
+
+        <ul>
+            <li>Block: The sole root of the component</li>
+            <li>Element: A component part of the Block</li>
+            <li>Modifier: A variant or extension of the Block</li>
+        </ul>
+    </div>
+    <div class="col-6">
+        <img src="assets/images/scss-mobile-first.JPG" alt="mobile first example" />
     </div>
 </div>
