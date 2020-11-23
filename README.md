@@ -25,3 +25,31 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Deploy to showroom
+
+### Build docker image
+
+```bash
+docker build -t acrindustrialaks.azurecr.io/frontendguide:1.1
+```
+
+### Push docker image to registry
+```bash
+docker push acrindustrialaks.azurecr.io/frontendguide:1.1
+```
+
+### Deploy to K8s cluster
+
+```bash
+kubectl apply -f frontendguide-deployment.yaml
+```
+
+
+
+
+
+
+
+
+
