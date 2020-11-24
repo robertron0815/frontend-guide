@@ -31,12 +31,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Build docker image
 
 ```bash
-docker build -t acrindustrialaks.azurecr.io/frontendguide:1.1
+docker build -t acrindustrialaks.azurecr.io/frontendguide:1.1 .
 ```
 
 ### Push docker image to registry
 ```bash
-docker push acrindustrialaks.azurecr.io/frontendguide:1.1
+docker push acrindustrialaks.azurecr.io/frontendguide:1.2
 ```
 
 ### Deploy to K8s cluster
