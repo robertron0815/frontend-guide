@@ -36,3 +36,57 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+
+---
+
+# IngresRoute
+---
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: whoami
+  namespace: default
+  annotations:    
+    traefik.ingress.kubernetes.io/frontend-entry-points: web,websecure
+    traefik.ingress.kubernetes.io/redirect-entry-point: websecure
+spec:
+  entryPoints: 
+    - web
+  routes:
+  - match: Host(`showroom.testlab.robotronlab.de`) 
+    kind: Rule
+    services:
+    - name: frontendguideservice   
+      namespace: dev   
+      port: 80
+    middleware:
+      - name: redirectscheme
+
+---
+# Redirect to https
+# Redirect to https
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: redirectscheme
+spec:
+  redirectScheme:
+    port: "443"
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingressroutetls
+  namespace: default
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`showroom.testlab.robotronlab.de`)
+    kind: Rule
+    services:
+    - name: frontendguideservice
+      namespace: dev
+      port: 80
+  tls:
+    certResolver: dev
