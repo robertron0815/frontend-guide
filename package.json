@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "htmlhint": "npx htmlhint 'src/app/**/*.html'"
+    "htmlhint": "npx htmlhint \"src/app/**/*.html\""
   },
   "private": true,
   "dependencies": {

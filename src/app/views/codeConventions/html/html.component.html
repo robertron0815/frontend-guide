@@ -4,11 +4,7 @@
     <h3>1. Valid and readable markup</h3>
     <ul>
         <li>write everything lowercase</li>
-        <li>take care of the correct indentation
-            <ul>
-                <li>spaces</li>
-            </ul>
-        </li>
+        <li>indentation: 4 spaces</li>
         <li>120 chars per line
             <ul>
                 <li>settings.json =&gt; "editor.rulers": [ 120 ]</li>
@@ -22,7 +18,14 @@
         </li>
         <li>organize DOM-Elements:
             <ul>
-                <li>rather use semantic HTML5-elements instead of just a "div"</li>
+                <li>rather use semantic HTML5-elements instead of just a "div"
+                    <ul>
+                        <li>Header,</li>
+                        <li>Footer,</li>
+                        <li>Nav,</li>
+                        <li>aside, ...</li>
+                    </ul>
+                </li>
                 <li>ask yourself if you need a block-element or not
                     <ul>
                         <li>(span {{"{display: block}"}} =&gt; just div)</li>
@@ -56,8 +59,8 @@
 
             <ol>
                 <li>Header: waiting for downloading and execution</li>
-                <li>Body with async attribut: rendering is paused until the file is executed</li>
-                <li>Body with defer attribut: download and execution following after the rendering</li>
+                <li>Body with async attribut: DOM rendering is paused until the file is executed</li>
+                <li>Body with defer attribut: download and execution following after the DOM rendering</li>
             </ol>
 
         </li>
