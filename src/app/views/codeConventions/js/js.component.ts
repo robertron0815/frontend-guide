@@ -41,8 +41,8 @@ export class JsComponent implements OnInit {
 
   /**
    * what does the function do
-   * @param foo boolean
-   * @returns boolean
+   * @param foo boolean - description of the param
+   * @returns boolean - description of the return value
    */
   clickHandler = (foo: boolean): boolean => {
     // do something

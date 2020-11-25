@@ -42,19 +42,22 @@ body .container {
     margin: rem-calc(20) 0;
 }
 
-
-.button--cta {
+.button {
     background: #ffffff;
     color: #000000;
     padding: 5px 10px;
 
-    &.button--cta__green {
+    &.button--cta {
         background: green;
+
+        &.button--cta__disabled {
+            background: gray;
+        }
     }
 
-    &.button--cta__icon {
+    &.button--icon {
         &:before {
-            content: '&foo';
+            content: 'icon';
             padding-right: 10px;
         }
     }
