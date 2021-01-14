@@ -43,22 +43,15 @@ body .container {
 }
 
 .button {
-    background: #ffffff;
+    border: 1px solid #ccc;
+    background: $white-color;
     color: #000000;
     padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 
-    &.button--cta {
-        background: green;
-
-        &.button--cta__disabled {
-            background: gray;
-        }
-    }
-
-    &.button--icon {
-        &:before {
-            content: 'icon';
-            padding-right: 10px;
-        }
+    &:hover {
+        background-color: $primary-color;
+        color: $white-color;
     }
 }

@@ -1,5 +1,6 @@
 header {
     display: flex;
+    justify-content: space-between;
     background: $primary-color;
     padding: rem-calc(20);
     height: $headerHeight;
@@ -16,5 +17,12 @@ header {
         font-size: rem-calc(25);
         position: relative;
         top: rem-calc(-3);
+    }
+
+    .login-state {
+        display: flex;
+        flex-direction: column;
+        color: $white-color;
+        min-width: 150px;
     }
 }

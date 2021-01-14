@@ -1,0 +1,46 @@
+<h2>oAuth 2.0 for Angular</h2>
+
+<p>The OAuth 2.0 authorization framework enables a third-party
+    application to obtain limited access to an HTTP service, either on
+    behalf of a resource owner by orchestrating an approval interaction
+    between the resource owner and the HTTP service, or by allowing the
+    third-party application to obtain access on its own behalf.<br />
+    <a href="https://tools.ietf.org/html/rfc6749" target="_blank">Source: IETF Tools</a>
+</p>
+
+<img src="/assets/images/oAuth.svg" alt="overview oAuth 2.0" class="margin-standard" />
+
+<h2>Follow this steps to implement oAuth 2.0 for your custom project.</h2>
+
+<div class="content-block">
+    <h3>1. Add oAuth-library to your project by npm or yarn</h3>
+    <p>NPM: npm install angular-oauth2-oidc</p>
+    <p>YARN: yarn add angular-oauth2-oidc</p>
+</div>
+
+<div class="content-block">
+    <h3>2. Add Auth-Core folder to your project and edit settings</h3>
+    <p>folder-path: src\app\core</p>
+    <p>Edit the following settings to your provider: (src\app\core\auth-config.ts)</p>
+    <img src="/assets/images/oAuth-settings.JPG" alt="oAuth 2.0 settings" class="margin-standard" width="1000" />
+</div>
+
+<div class="content-block">
+    <h3>3. Import functions to your app.module.ts</h3>
+    <p>import OAuthModule and CoreModule to your app.module.ts.<br/>
+        Please have a look in this file for more information.</p>
+</div>
+
+<div class="content-block">
+    <h3>4. Add and register silent-refresh.html to your project</h3>
+    <p>Copy this file to your project: src\silent-refresh.html</p>
+    <p>It's important to register this file in your angular.json and check if you can access the file via browser.</p>
+    <img src="/assets/images/oAuth-silent-refresh.JPG" width="500" alt="add html to angular.json"
+        class="margin-standard" />
+</div>
+
+<div class="content-block">
+    <h3>5. Add services to your app component</h3>
+    <p>Have a look at this file inside this repository: src\app\app.component.ts. Import the "AuthService" and add the
+        services that are necessary for your custom project.</p>
+</div>

@@ -1,17 +1,21 @@
-<header>
-    <img class="logo" src="assets/images/robotron-logo.svg" alt="robotron frontend guide"/>
-    <h1>Frontend Guide</h1>
-</header>
+<app-header></app-header>
 
 <section class="container">
     <div class="row">
-        <aside class="col-12 col-md-2 sidebar">
+        <aside class="col-12 col-md-2 sidebar" *ngIf="(isAuthenticated | async)">
             <app-sidebar></app-sidebar>
         </aside>
 
         <div class="col-12 col-md-10">
             <section class="content">
-                <router-outlet></router-outlet>
+                <div *ngIf="!(isAuthenticated | async)">
+                    <h2>Bitte melden Sie sich an, um die Scanning-App zu bedienen.</h2>
+                    <button (click)="login();">Login</button>
+                </div>
+
+                <ng-container *ngIf="(isAuthenticated | async)">
+                    <router-outlet></router-outlet>
+                </ng-container>
             </section>
         </div>
     </div>
