@@ -1,6 +1,6 @@
 # stage 1
 
-FROM node:alpine AS compile-image
+FROM node:10.23.1-alpine3.11 AS compile-image
 
 WORKDIR /opt/ng
 COPY ./package.json ./
