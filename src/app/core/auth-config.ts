@@ -5,9 +5,9 @@ import { AuthConfig } from 'angular-oauth2-oidc';
  */
 
 export const authConfig: AuthConfig = {
-  issuer: 'https://sso-adfs-internal.robotron.de/adfs',
-  clientId: '4a567398-f02b-486e-8302-70521ffe5807', // The "Auth Code + PKCE" client
-  loginUrl: 'https://sso-adfs-internal.robotron.de/adfs/oauth2/authorize',
+  issuer: 'https://adfs-rdsnt004.robotron.de/adfs',
+  clientId: 'a3928653-977e-43b8-aae7-4b3ddebea5a2', // The "Auth Code + PKCE" client
+  loginUrl: 'https://adfs-rdsnt004.robotron.de/adfs/oauth2/authorize',
   responseType: 'id_token token',
   redirectUri: window.location.origin,
   silentRefreshRedirectUri: window.location.origin + '/silent-refresh.html', // important to register in angular.json
