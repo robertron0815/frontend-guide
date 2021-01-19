@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JsComponent } from './views/codeConventions/js/js.component';
 import { HeaderComponent } from './components/header/header.component';
 import { OAuthComponent } from './views/examples/o-auth/o-auth.component';
+import { ScssSkillsComponent } from './views/frontendSkills/scss/scss-skills.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OAuthComponent } from './views/examples/o-auth/o-auth.component';
     CssComponent,
     JsComponent,
     HeaderComponent,
-    OAuthComponent
+    OAuthComponent,
+    ScssSkillsComponent
   ],
   imports: [
     BrowserModule,

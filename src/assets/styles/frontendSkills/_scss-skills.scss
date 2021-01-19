@@ -1,0 +1,208 @@
+.lesson {
+    display: inline-block;
+}
+.lesson-img {
+    width: 620px;
+    height: auto;
+}
+
+// Default css properties:
+.example-container {
+    height: 140px;
+    width: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: grey;
+}
+.example-cube {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    margin: 10px;
+    float: left;
+
+    border-radius: 8px;
+    box-shadow: 2px 3px 7px #333;
+
+    font-size: 5em;
+    color:rgb(0, 59, 68);
+    font-family: fantasy;
+    font-weight: 500;
+    text-align: center;
+}
+
+// Backgrounds with plain css
+.example-0-cube-1 {
+    background: rgb(117, 246, 85);
+}
+.example-0-cube-2 {
+    background: rgb(49, 238, 222);
+}
+.example-0-cube-3 {
+    background: rgb(219, 129, 44);
+}
+.example-0-cube-4 {
+    background: rgb(194, 30, 145);
+}
+.example-0-cube-5 {
+    background: rgb(235, 217, 56);
+}
+
+
+/* 1. Variables */
+$background-1: rgb(117, 246, 85);
+$background-2: rgb(49, 238, 222);
+$background-3: rgb(219, 129, 44);
+$background-4: rgb(194, 30, 145);
+$background-5: rgb(235, 217, 56);
+
+// Array:
+$backgrounds: (
+    1: $background-1,
+    2: $background-2,
+    3: $background-3,
+    4: $background-4,
+    5: $background-5
+);
+
+$radius: 8px;
+// etc.
+
+.example-1-cube-1 {
+    background: $background-1;
+}
+.example-1-cube-2 {
+    background: $background-2;
+}
+.example-1-cube-3 {
+    background: $background-3;
+}
+.example-1-cube-4 {
+    background: $background-4;
+}
+.example-1-cube-5 {
+    background: $background-5;
+}
+
+
+/* 2. Nesting */
+.nesting-container {
+
+    .example-cube {
+        color: white;
+
+        @media screen and (max-width: 1000px) {
+            color: red;
+        }
+    }
+}
+.example-2-cube {
+    &-1 {
+        background: $background-1;
+        &:hover {
+            background: lighten($background-1, 20);
+        }
+    }
+    &-2 {
+        background: $background-2;
+        &:hover {
+            background: darken($background-2, 20);
+        }
+    }
+    &-3 {
+        background: $background-3;
+    }
+    &-4 {
+        background: $background-4;
+    }
+    &-5 {
+        background: $background-5;
+    }
+}
+
+
+/* 3. @import - Get CSS from external file */
+@import './scss-skills-extern';
+@import '../mixins/mixins';
+
+
+/* 4. @extend */
+%extend-cubes {
+    .example-4-cube {
+        &-1 {
+            background: $background-1;
+        }
+        &-2 {
+            background: $background-2;
+        }
+        &-3 {
+            background: $background-3;
+        }
+        &-4 {
+            background: $background-4;
+        }
+        &-5 {
+            background: $background-5;
+        }
+    }
+}
+.example-container-2 {
+    @extend .example-container;
+    @extend %extend-cubes;
+}
+
+
+/* 5. Mixins */
+// in normal cases mixins are imported and included from external files like "styles/mixins/_mixins.scss"
+
+.example-5-cube {
+    &-1 {
+        @include get-cube-properties(1);
+    }
+    &-2 {
+        @include get-cube-properties(2);
+    }
+    &-3 {
+        @include get-cube-properties(3);
+    }
+    &-4 {
+        @include get-cube-properties(4);
+    }
+    &-5 {
+        @include get-cube-properties(5);
+    }
+}
+
+/* 6. Conditions */
+@for $i from 1 through 5 {
+
+    .example-6-cube-#{$i} {
+        box-shadow: 2px 3px 10px white;
+
+        @if ( $i % 2 == 0 ) {
+            color: blue;
+        } @else {
+            color: red;
+        }
+
+        @each $index, $bg in $backgrounds {
+            @if ($index == $i) {
+                background: $bg;
+            }
+        }
+    }
+}
+
+
+/* Functions */
+@for $i from 1 through 5 {
+    .example-7-cube-#{$i} {
+        @each $index, $bg in $backgrounds {
+            @if ($index == $i) {
+                background: darken($bg, random(50));
+            }
+        }
+    }
+}
