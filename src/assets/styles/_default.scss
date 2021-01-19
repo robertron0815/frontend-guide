@@ -1,22 +1,30 @@
-html, body { height: 100%; }
-
-body { 
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
-    font-size: rem-calc(14);
-    color: $primary-color;
+html,
+body {
+    height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-size: rem-calc(14);
+    color: $primary-color;
+
+    .container {
+        max-width: initial;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Cuprum';
 }
 
 a {
     color: $primary-color;
-}
-
-body .container {
-    max-width: initial;
 }
 
 .content {
@@ -43,9 +51,9 @@ body .container {
 }
 
 .button {
-    border: 1px solid #ccc;
+    border: 1px solid $gray-color-light;
     background: $white-color;
-    color: #000000;
+    color: $black-color;
     padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;

@@ -1,14 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700&display=swap');
+// You can add global styles to this file, and also import other style files
+@import 'assets/styles/libs/font';
 
-/* Mixins */
+// Mixins
 @import 'assets/styles/mixins/rem-calc';
 
-/* General */
+// General
 @import 'assets/styles/settings';
 @import 'assets/styles/colors';
 @import 'assets/styles/default';
 
-/* Modules */
+// Modules
 @import 'assets/styles/components/header';
 @import 'assets/styles/components/sidebar';

@@ -106,3 +106,37 @@
         <img src="assets/images/scss-mobile-first.JPG" alt="mobile first example" />
     </div>
 </div>
+
+<div class="content-block row">
+    <div class="col-12">
+        <h3>6. Linting</h3>
+        <p>For better control about the sass/scss code, it's necessary to use a linter. From now on it's it's standard for every new project to integrate the sass-lint package.</p>
+        <p>There are only a few steps for implementing:</p>
+
+        <ul>
+            <li>include <a href="assets/sass-lint.yml" download>sass-lint.yml</a> in your root-folder</li>
+            <li>install sass-lint and husky via npm or yarn. Sass-lint is the linter. Husky is a pre-commit hook library. It prevents commiting your changes if there are errors or warnings.
+                <ul>
+                    <li>npm install -g sass-lint</li>
+                    <li>npm install husky</li>
+                </ul>
+            </li>
+            <li>add commands to your package.json (have a look to image 1 and 2)</li>
+        </ul>
+    </div>
+    <div class="col-6">
+        <img src="assets/images/sass-lint-package-json-1.JPG" alt="add sass-lint to npm script" width="400" />
+    </div>
+    <div class="col-6">
+        <img src="assets/images/sass-lint-package-json-2.JPG" alt="add husky linting hook" width="400" />
+    </div>
+
+    <div class="col-12">
+        <ul>
+            <li>It is useful to ignore third-party libraries from linting.<br/>
+                <img src="assets/images/sass-lint-config.JPG" width="300" alt="ignore configuration"/>
+            </li>
+            <li>Now you can run the script via npm run sass-lint and watch your console. Good luck ;-)</li>
+        </ul>
+    </div>
+</div>
