@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "htmlhint": "npx htmlhint \"src/app/**/*.html\"",
-    "sass-lint": "sass-lint -v -q"
+    "sass-lint": "sass-lint -v -q --max-warnings=0"
   },
   "private": true,
   "sasslintConfig": "sass-lint.yml",
@@ -57,7 +57,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run sass-lint"
+      "pre-commit": "npm run sass-lint && npm run htmlhint"
     }
   }
 }
