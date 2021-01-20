@@ -15,7 +15,7 @@ export const authConfig: AuthConfig = {
   useSilentRefresh: true, // Needed for Code Flow to suggest using iframe-based refreshes
   silentRefreshTimeout: 15000, // Timeout for silent refresh
   timeoutFactor: 0.75, // factor for refresh access token (0.75 of expire_date)
-  sessionChecksEnabled: false, // 
+  sessionChecksEnabled: false, // checks session
   showDebugInformation: false, // Also requires enabling "Verbose" level in devtools
   clearHashAfterLogin: true, // https://github.com/manfredsteyer/angular-oauth2-oidc/issues/457#issuecomment-431807040,
   nonceStateSeparator : 'semicolon' // Real semicolon gets mangled by IdentityServer's URI encoding
