@@ -1,0 +1,342 @@
+<h2>SCSS basics</h2>
+
+<div class="content-block lesson">
+    <div class="container-left">
+        <p>
+            SCSS is a very powerful extension of simple CSS.
+            However, when SCSS code is executed, it will turn back into
+            normal CSS code compiled.
+        </p>
+        <img src="/assets/images/scss-graph.svg" alt="overview scss to css" style="width: 100%;" />
+        <p>
+            In order to better visualize the process of conversion, the following SCSS logic can also be tested in
+            <a href="https://jsonformatter.org/scss-to-css" target="_blank">this SCSS to CSS converter</a> 
+            by pasting the SCSS code on the left side.
+            The resulting CSS code then appears on the right side.
+        </p>
+        <p>
+            When creating larger projects, it is important to keep track of the
+            to retain project-wide CSS logic, which often extends over several to added
+            many files. Especially with several developers it grows
+            the risk of writing redundant code or generally losing track of things.
+        </p>
+        <p>
+            In order to make the creation of CSS logic more compact and clear,
+            a few functionalities of SCSS are presented in detail:
+        </p>
+        <ol>
+            <li>Variables</li>      <!-- Variablen -->
+            <li>Nesting</li>        <!-- Verschachtelung -->
+            <li>Imports</li>        <!-- Imports -->
+            <li>Inheritance</li>    <!-- Vererbung -->
+            <li>Mixins</li>         <!-- Mixins -->
+            <li>Conditions</li>     <!-- Bedingungen -->
+            <li>Functions</li>      <!-- Funktionen -->
+        </ol>
+
+        <p>
+            If your own IDE does not have a suitable precompiler, one must be installed to use SCSS. The
+            <a href="https://sass-lang.com/install" target="_blank">Webseite of Sass or SCSS </a>
+            offers good instructions for this and a list of suitable tools if you prefer a UI.
+        </p>
+        <p>
+            As an alternative to SCSS, you can also write Sass code. The difference to SCSS is purely
+            syntactic and, similar to Python, Sass would work with line indentations instead of curly
+            braces and semicolons.
+        </p>
+        <p>
+            Further information on SCSS and Sass can be found on 
+            <a href="https://sass-lang.com/" target="_blank">the website</a>.
+        </p>
+        <p>
+            At the top on the right is a CSS example with 5 squares (hereinafter referred as cubes).
+            Below are the excerpts from the corresponding HTML and CSS files required for this display
+            in the browser. In the following sections, which present the listed SCSS functionalities,
+            this example is always used and shows how a corresponding representation was implemented
+            in the source code using the presented functionality.
+        </p>
+    </div>
+    <div class="container-right">
+        <div class="example-container">
+            <div class="example-cube example-0-cube-1">1</div>
+            <div class="example-cube example-0-cube-2">2</div>
+            <div class="example-cube example-0-cube-3">3</div>
+            <div class="example-cube example-0-cube-4">4</div>
+            <div class="example-cube example-0-cube-5">5</div>
+        </div>
+        <img src="/assets/images/scss-skills/0.png" alt="plain css" class="margin-top lesson-img" />
+    </div>
+</div>
+
+
+<!-- 1. Variables -->
+<div class="content-block lesson">
+    <h3>1. Variables in SCSS</h3>
+
+    <div class="container-left">
+        <p>
+            With SCSS it is now possible to work with variables. This allows values ​​that are repeated
+            within the CSS file (or even across files) to be summarized in one place. In this way,
+            colors, sizes, distances, etc., which occur in the entire application, can be managed in a
+            central position. This also saves the developer the time to search for all entries when
+            adjusting the style of the website and only needs to change one place in the code instead.
+        </p>
+        <p>
+            In the example, the colors of the cubes are now saved in variables. Now the variables can be
+            used in the code instead of the assigned color. It is also possible to create lists with
+            which values ​​can be linked.
+        </p>
+    </div>
+    <div class="container-right">
+        <div class="example-container">
+            <div class="example-cube example-1-cube-1">1</div>
+            <div class="example-cube example-1-cube-2">2</div>
+            <div class="example-cube example-1-cube-3">3</div>
+            <div class="example-cube example-1-cube-4">4</div>
+            <div class="example-cube example-1-cube-5">5</div>
+        </div>
+        <img src="/assets/images/scss-skills/1.png" alt="variables" class="margin-top lesson-img" />
+    </div>
+</div>
+
+
+<!-- 2. Nesting -->
+<div class="content-block lesson">
+    <h3>2. Nesting</h3>
+
+    <div class="container-left">
+        <p>
+            Nesting CSS logic is a good option for avoiding redundant code, avoiding unnecessarily long class
+            hierarchies, and keeping the code generally clean and tidy.
+        </p>
+        <p>
+            In the example, all cubes that are located in the "nesting container" class are given a white number by
+            means of nesting. What also works, and is used at this point, is the use of media querys within this nesting.
+        </p>
+        <p>
+            In addition, it is possible to split class names using the "&" character in order to enable nesting.
+            This is also required for pseudo classes like ":hover" for a mouseover effect.
+        </p>
+    </div>
+    <div class="container-right">
+        <div class="example-container nesting-container">
+            <div class="example-cube example-2-cube-1">1</div>
+            <div class="example-cube example-2-cube-2">2</div>
+            <div class="example-cube example-2-cube-3">3</div>
+            <div class="example-cube example-2-cube-4">4</div>
+            <div class="example-cube example-2-cube-5">5</div>
+        </div>
+        <img src="/assets/images/scss-skills/2.png" alt="nesting" class="margin-top" />
+    </div>
+</div>
+
+<!-- 3. @Import -->
+<div class="content-block lesson">
+    <h3>3. Import</h3>
+
+    <div class="container-left">
+        <p>
+            @Import has nothing to do with the classic CSS import-command.
+            With @import the contents of SCSS files are integrated into other SCSS files.
+            In this case the @import command is more like an @include. 
+        </p>
+        <p>
+            SCSS files that are added to the main SCSS file via import are marked with
+            a "_" underscore character at the beginning of the file name. These files
+            are not created again when converting to CSS logic. Instead, their contents
+            are integrated directly into the file(s), where they are integrated using
+            @import. When importing the SCSS file, the underscore can be omitted.
+        </p>
+        <p>
+            In the example, the backgrounds for the cubes are imported from an external
+            SCSS file "_scss-skills-extern.scss".
+            Due to the preceding underscore in the file name, no CSS file with the same
+            name is generated when converting to CSS logic.
+            Only "scss-skills-extern" is used for the import command.
+        </p>
+    </div>
+    <div class="container-right">
+        
+        <div class="example-container">
+            <div class="example-cube example-3-cube-1">1</div>
+            <div class="example-cube example-3-cube-2">2</div>
+            <div class="example-cube example-3-cube-3">3</div>
+            <div class="example-cube example-3-cube-4">4</div>
+            <div class="example-cube example-3-cube-5">5</div>
+        </div>
+
+        <img src="/assets/images/scss-skills/3.png" alt="import" class="margin-top" />
+    </div>
+</div>
+
+<!-- 4. Vererbung mit @extend -->
+<div class="content-block lesson">
+    <h3>4. Inheritance / Extend</h3>
+
+    <div class="container-left">
+        <p>
+            With @extend the logic of classes can be integrated into newly defined classes.
+            If classes, which you include in other classes with @extend, are not used explicitly
+            in the HTML code and only serve as a template, you can use "%" instead of "."
+            be marked. When converting SCSS to CSS, content is only integrated where it has been
+            included with "@extend".
+        </p>
+        <p>
+            In the example a new container "example-container-2" is created. This receives all
+            properties from the class "example-container" inherited via the upper extend.
+        </p>
+        <p>
+            The background colors of the cubes are fetched from "% extend-cubes" via another extend.
+            This class is never created itself when converting to CSS and is only used to inherit
+            properties of classes, like "example-container-2" here.
+
+        </p>
+    </div>
+    <div class="container-right">
+        
+        <div class="example-container-2">
+            <div class="example-cube example-4-cube-1">1</div>
+            <div class="example-cube example-4-cube-2">2</div>
+            <div class="example-cube example-4-cube-3">3</div>
+            <div class="example-cube example-4-cube-4">4</div>
+            <div class="example-cube example-4-cube-5">5</div>
+        </div>
+
+        <img src="/assets/images/scss-skills/4.png" alt="extend" class="margin-top" />
+    </div>
+</div>
+
+<!-- 5. Mixins -->
+<div class="content-block lesson">
+    <h3>5. Mixins</h3>
+
+    <div class="container-left">
+        <p>
+            They are basically what functions are in other programming languages. You can create methods in
+            one place in the code and use them multiple times. It is best practice to store these mixins in
+            a separate folder "styles / mixins". Just like a function, a mixin can receive and process parameters.
+        </p>
+        <p>
+            In the example, the mixin "get-cube-properties" receives the number of the cube and supplies the
+            required background. This is then added to the nested cube classes here using "@include".
+            The explanation of the conditions used in the mixin are explained in the next section.
+        </p>
+        
+        
+    </div>
+    <div class="container-right">
+        
+        <div class="example-container">
+            <div class="example-cube example-5-cube-1">1</div>
+            <div class="example-cube example-5-cube-2">2</div>
+            <div class="example-cube example-5-cube-3">3</div>
+            <div class="example-cube example-5-cube-4">4</div>
+            <div class="example-cube example-5-cube-5">5</div>
+        </div>
+
+        <img src="/assets/images/scss-skills/5.png" alt="mixins" class="margin-top" />
+    </div>
+</div>
+
+<!-- 6. Conditions -->
+<div class="content-block lesson">
+    <h3>6. Conditions (if-else / for / while / each)</h3>
+
+    <div class="container-left">
+        SCSS extends CSS by the possibility to use the following conditions:
+        <ul>
+            <li>@if() - @else if() - @else (see example)</li>
+            <ul>
+                <li>With "@if" the subsequent condition is checked for its truth value</li>
+                <ul>
+                    <li>If true, the properties specified in the body are used</li>
+                    <li>If wrong, any existing alternative conditions are checked</li>
+                </ul>
+                <li>with "@else if" an alternative condition is checked for its truth value</li>
+                <li>with "@else" an alternative is created if the previous conditions did not apply</li>
+            </ul>
+            <li>@for (see example)</li>
+            <ul>
+                <li>"@for" - runs as a loop until the associated tag has reached a limit value</li>
+                <li>"$i" - Example of a variable, is automatically incremented after the loop has been run through</li>
+                <li>"from X through y" - the start value (X) and limit value (Y) are determined here</li>
+                <ul>
+                    <li>The difference between the start and limit value determines the number of loop runs</li>
+                </ul>
+            </ul>
+            <li>@each (see example)</li>
+            <ul>
+                <li>can iterate over lists of different complexities, which can also consist of several values</li>
+                <ul>
+                    <li>one value - @each $social in facebook, twitter, instagram</li>
+                    <li>two values - @each $header, $size in (h1: 32px, h2: 28px, h3: 24px, h4: 20px)</li>
+                    <li>three values - @each $header, $size, $color in (h1, 32px, #333), (h2, 28px, #222) etc.</li>
+                </ul>
+                <li>The number of runs depends on the length of the list</li>
+            </ul>
+            <li>@while</li>
+            <ul>
+                <li>the procedure is similar to the for-loop</li>
+                <li>receives a variable and a limit value</li>
+                <ul>
+                    <li>example: @while( $i <= 10 ) ...</li>
+                </ul>
+                <li>incrementation of the variable must be entered</li>
+                <ul>
+                    <li>example: $i: $i + 1</li>
+                </ul>
+            </ul>
+            <li>Linking a loop variable with a class name</li>
+            <ul>
+                <li>see class "example-6-cube-" in the for loop of the example</li>
+            </ul>
+        </ul>
+    </div>
+    <div class="container-right">
+        
+        <div class="example-container">
+            <div class="example-cube example-6-cube-1">1</div>
+            <div class="example-cube example-6-cube-2">2</div>
+            <div class="example-cube example-6-cube-3">3</div>
+            <div class="example-cube example-6-cube-4">4</div>
+            <div class="example-cube example-6-cube-5">5</div>
+        </div>
+
+        <img src="/assets/images/scss-skills/6.png" alt="condition examples" class="margin-top" />
+    </div>
+</div>
+
+<!-- 7. Functions -->
+<div class="content-block lesson">
+    <h3>7. Functions</h3>
+
+    <div class="container-left">
+        SCSS and Sass also already have some so-called "built-in modules". The example shows two of the available functions in action.
+        <ul>
+            <li>darken()-function:</li>
+            <ul>
+                <li>accepts a color and a percentage</li>
+                <li>darkens this color by the specified percentage</li>
+            </ul>
+            <li>random()-function</li>
+            <ul>
+                <li>accepts a maximum value</li>
+                <li>Returns a random number between 0 and the maximum value</li>
+            </ul>
+        </ul>
+        If you are interested, you will find more of these functions 
+        <a href="https://sass-lang.com/documentation/modules" target="_blank">here</a>.
+    </div>
+    <div class="container-right">
+        
+        <div class="example-container">
+            <div class="example-cube example-7-cube-1">1</div>
+            <div class="example-cube example-7-cube-2">2</div>
+            <div class="example-cube example-7-cube-3">3</div>
+            <div class="example-cube example-7-cube-4">4</div>
+            <div class="example-cube example-7-cube-5">5</div>
+        </div>
+
+        <img src="/assets/images/scss-skills/7.png" alt="function examples" class="margin-top" />
+    </div>
+</div>

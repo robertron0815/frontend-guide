@@ -1,0 +1,15 @@
+@mixin get-cube-properties($number) {
+    @if ($number == 1) {
+        background: $background-1;
+    } @else if ($number == 2) {
+        background: $background-2;
+    } @else if ($number == 3) {
+        background: $background-3;
+    } @else if ($number == 4) {
+        background: $background-4;
+    } @else if ($number == 5) {
+        background: $background-5;
+    } @else {
+        @warn "Cube doesn't exists.";
+    } 
+} 
