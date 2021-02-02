@@ -36,17 +36,17 @@ docker build -t acrindustrialaks.azurecr.io/frontendguide:1.4 .
 
 ### Push docker image to registry
 ```bash
-docker push acrindustrialaks.azurecr.io/frontendguide:1.4
+docker push acrindustrialaks.azurecr.io/frontendguide:1.5
 ```
 
-### Modify Version in K8s manifest "x"
+### Modify Version in K8s manifest "x" frontendguide-deployment.yaml
 
 ```bash
    spec:
       containers:
       - name: frontendguide
         imagePullPolicy: Always
-        image: acrindustrialaks.azurecr.io/frontendguide:1.x
+        image: acrindustrialaks.azurecr.io/frontendguide:1.5
         ports:
         - containerPort: 80
 ```
