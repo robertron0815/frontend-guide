@@ -11,13 +11,24 @@ header {
         margin-right: rem-calc(20);
     }
 
-    h1 {
+    .headline-container {
+        display: flex;
+        flex-direction: column;
         color: $white-color;
-        font-family: 'Cuprum';
-        font-size: rem-calc(25);
-        position: relative;
-        top: rem-calc(-3);
+        text-align: center;
+
+        h1 {
+            font-family: 'Cuprum';
+            font-size: rem-calc(25);
+            margin: 0 0 10px;
+        }
+
+        .version {
+            font-size: rem-calc(12);
+        }
     }
+
+    
 
     .login-state {
         display: flex;
