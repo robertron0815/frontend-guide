@@ -48,14 +48,14 @@ a {
             width: 50%;
             height: 100%;
             padding-right: 10px;
-            float:left;
+            float: left;
         }
 
         .container-right {
             width: 50%;
             height: 100%;
             padding-left: 10px;
-            float:left;
+            float: left;
         }
     }
 }
@@ -63,6 +63,7 @@ a {
 .margin-standard {
     margin: rem-calc(20) 0;
 }
+
 .margin-top {
     margin: rem-calc(20) 0 0;
 }
