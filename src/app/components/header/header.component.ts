@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../core/auth.service';
 import { Observable } from 'rxjs';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { version } from '../../../../package.json';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,11 @@ export class HeaderComponent {
   isAuthenticated: Observable<boolean>;
   faChevronRight = faChevronRight;
 
+  public version: string;
+
   constructor(private authService: AuthService) {
     this.isAuthenticated = this.authService.isAuthenticated$;
+    this.version = version;
   }
 
   /**

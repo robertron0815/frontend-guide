@@ -18,7 +18,7 @@ spec:
       containers:
       - name: frontendguide
         imagePullPolicy: Always
-        image: acrindustrialaks.azurecr.io/frontendguide:1.3
+        image: acrindustrialaks.azurecr.io/frontendguide:1.6
         ports:
         - containerPort: 80
 
