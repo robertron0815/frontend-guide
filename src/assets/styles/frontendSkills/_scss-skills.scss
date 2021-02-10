@@ -1,3 +1,7 @@
+// The exception handlers used in this to ignore the sass-lint
+// were used in this file for demonstration purposes only and
+// are not intended as a solution to avoid warnings or errors.
+
 .lesson {
     display: inline-block;
 }
@@ -5,6 +9,10 @@
 .lesson-img {
     width: 620px;
     height: auto;
+}
+
+.scss-graph {
+    width: 100%;
 }
 
 // Default css properties:
