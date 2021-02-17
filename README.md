@@ -31,12 +31,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Build docker image
 
 ```bash
-docker build -t acrindustrialaks.azurecr.io/frontendguide:1.6 .
+docker build -t acrindustrialaks.azurecr.io/frontendguide:[VERSIONNUMBER] .
 ```
 
 ### Push docker image to registry
 ```bash
-docker push acrindustrialaks.azurecr.io/frontendguide:1.6
+docker push acrindustrialaks.azurecr.io/frontendguide:[VERSIONNUMBER]
 ```
 
 ### Modify Version in K8s manifest "x" frontendguide-deployment.yaml
@@ -46,7 +46,7 @@ docker push acrindustrialaks.azurecr.io/frontendguide:1.6
       containers:
       - name: frontendguide
         imagePullPolicy: Always
-        image: acrindustrialaks.azurecr.io/frontendguide:1.5
+        image: acrindustrialaks.azurecr.io/frontendguide:[VERSIONNUMBER]
         ports:
         - containerPort: 80
 ```
