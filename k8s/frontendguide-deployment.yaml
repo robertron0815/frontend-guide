@@ -4,7 +4,7 @@ metadata:
   name: frontendguide
   labels:
     app: frontendguide
-  namespace: dev
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -18,7 +18,7 @@ spec:
       containers:
       - name: frontendguide
         imagePullPolicy: Always
-        image: acrindustrialaks.azurecr.io/frontendguide:1.8
+        image: acrindustrialaks.azurecr.io/frontendguide:1.9
         ports:
         - containerPort: 80
 
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontendguideservice
-  namespace: dev
+  namespace: default
 spec:
   selector:
     app: frontendguide
@@ -39,44 +39,12 @@ spec:
 
 ---
 
-# IngresRoute
----
-kind: IngressRoute
 apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: whoami
-  namespace: default
   annotations:    
     traefik.ingress.kubernetes.io/frontend-entry-points: web,websecure
-    traefik.ingress.kubernetes.io/redirect-entry-point: websecure
-spec:
-  entryPoints: 
-    - web
-  routes:
-  - match: Host(`showroom.testlab.robotronlab.de`) 
-    kind: Rule
-    services:
-    - name: frontendguideservice   
-      namespace: dev   
-      port: 80
-    middleware:
-      - name: redirectscheme
-
----
-# Redirect to https
-# Redirect to https
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: redirectscheme
-spec:
-  redirectScheme:
-    port: "443"
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: ingressroutetls
+  name: frontendguidetls
   namespace: default
 spec:
   entryPoints:
@@ -86,7 +54,6 @@ spec:
     kind: Rule
     services:
     - name: frontendguideservice
-      namespace: dev
       port: 80
   tls:
     certResolver: dev
