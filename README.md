@@ -31,13 +31,22 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Build docker image
 
 ```bash
-docker build -t acrindustrialaks.azurecr.io/frontendguide:1.4 .
+docker build -t acrindustrialaks.azurecr.io/frontendguide:1.5 .
 ```
 
 ### Push docker image to registry
 ```bash
-docker push acrindustrialaks.azurecr.io/frontendguide:1.4
+docker push acrindustrialaks.azurecr.io/frontendguide:1.5
 ```
+
+### Mac
+
+```
+docker buildx build -t acrindustrialaks.azurecr.io/frontendguide:1.7 --platform linux/amd64 --push . 
+```
+
+
+
 
 ### Modify Version in K8s manifest "x"
 
