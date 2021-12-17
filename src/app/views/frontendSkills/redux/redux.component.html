@@ -1,0 +1,172 @@
+<h2>Redux</h2>
+
+<div class="content-block">
+    <h3>1. What is redux?</h3>
+
+    <p>Redux is a global state container for JavaScript and TypeScript Apps.<br />
+        Mostly redux is used as a state management tool for react. But you can use it for any other JavaScript library
+        or framework.<br />There are also tools for other frameworks, which are quite similar to redux (angular: akita,
+        ngRX, ...)</p>
+    <p>Facts about redux:</p>
+    <ul>
+        <li>global state management tool</li>
+        <li>stores the state in the browser memory
+            <ul>
+                <li>the store isn't a database, it's just like a session storage</li>
+                <li>data is flushed by closing session</li>
+            </ul>
+        </li>
+        <li>it's lightweight ~ 1.7kB</li>
+        <li>it's fast</li>
+        <li>persist data by saving it in the browser localstorage</li>
+    </ul>
+</div>
+
+<div class="content-block">
+    <h3>2. What is redux used for?</h3>
+
+    <p>Redux is used to store a central state (settings and configurations) of an application, which is shared across
+        all components.</p>
+</div>
+
+<div class="content-block">
+    <h3>3. How does it work?</h3>
+    <img src="assets/images/redux/redux-graph.svg" width="700" alt="redux graph - how it works" />
+
+    <p>When component 1 is writing "userAuth: true" to the store, all other components are getting updated and
+        rerenderd,
+        which are subscribed to the prop "userAuth" in the store.</p>
+</div>
+
+<div class="content-block">
+    <h3>4. Methods</h3>
+
+    <h4>Actions</h4>
+    <p>Actions are similar to events. It's the only way to store data to your redux store. Actions are triggered by user
+        interaction, Api-calls or form submissions.</p>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <figure>
+                <img src="assets/images/redux/action.JPG" width="350" alt="redux create action" />
+                <figcaption>define actione</figcaption>
+            </figure>
+        </div>
+        <div class="col-12 col-md-6">
+            <figure>
+                <img src="assets/images/redux/action-call.JPG" width="350" alt="redux call action" />
+                <figcaption>call action via dispatch</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <h4>Reducer</h4>
+    <p>Reducers are functions which take the current state and perform the action. In the Reducer the state will be
+        created, updated or deleted. Write each switch-case to add, update or remove data from the state.</p>
+    <img src="assets/images/redux/reducer.JPG" width="350" alt="redux call action" />
+
+    <p>A store holds the whole state tree of your application. The only way to change the state inside it is to dispatch
+        an action on it.<br />
+        Source: <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a href="https://redux.js.org/api/store"
+            target="_blank" rel="noopener noreferrer">Official Redux Page</a>
+    </p>
+</div>
+
+<div class="content-block">
+    <h3>5. Best practice</h3>
+
+    <h4>Create one store per app</h4>
+    <p>It's a standard to have only one store for the whole app. It's easier to store and rehydrate the data and
+        simplifies the subscription logic.<br />Multiple stores are in large projects usefull, but you have to take care
+        of a good performance (too many updates &amp; rerenderings).</p>
+
+    <h4>Do Not Mutate State</h4>
+    <p>If you edit just an property of the stored object, it's difficult for redux to detect the changes. It's
+        recommended to override the old object with the new object.</p>
+
+    <h4>Reducers must not have side effects</h4>
+    <p>Reducer only take care about their own state and arguments. It's not allowed to have any other logic inside. If
+        is special logic neccessary, then do it outside the reducer before call the action.</p>
+
+    <h4>Do not put non-serializable values in state or actions</h4>
+    <p>Avoid putting non-serializable values such as Promises, Symbols, Maps/Sets, functions, or class instances into
+        the Redux store state or dispatched actions. This ensures that capabilities such as debugging via the Redux
+        DevTools will work as expected. It also ensures that the UI will update as expected.</p>
+
+    <h4>Create actions and reducers for each state</h4>
+    <p>To keep it simple, it's recommended to have for each state an separate action and reducer. The code structure
+        it's easier to read and to update.</p>
+
+    <h4>Gather all separate reducers in one main reducer (React)</h4>
+    <p>Create a simple store structure by combining all reducers in one reducer.</p>
+
+    <figure>
+        <img src="assets/images/redux/main-reducer.JPG" alt="reducer combiner" width="750" />
+        <figcaption>reducers.js combine all separate reducers</figcaption>
+    </figure>
+
+    <p>For more information have a look at the official documentation: <fa-icon [icon]="faHandPointRight"
+            class="link-icon"></fa-icon><a href="https://redux.js.org/style-guide/style-guide" target="_blank"
+            rel="noopener noreferrer">official style guide</a></p>
+</div>
+
+<div class="content-block">
+    <h3>6. Debugging</h3>
+
+    <p>The redux DevTools for Chrome and Firefox allows to have a look in your redux store. There are several features:
+    </p>
+
+    <ul>
+        <li>see the current state</li>
+        <li>the diff between the last und the current state</li>
+        <li>a timeline how the state was wrote</li>
+        <li>visualisations: tree, chart, raw</li>
+        <li>import/export state</li>
+    </ul>
+
+    <p>Get the tool:</p>
+    <ul class="no-markers">
+        <li>
+            <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a
+                href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=de"
+                target="_blank" rel="noopener noreferrer">Chrome Redux DevTools</a>
+        </li>
+        <li>
+            <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a
+                href="https://addons.mozilla.org/de/firefox/addon/reduxdevtools/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
+                target="_blank" rel="noopener noreferrer">Firefox Redux DevTools</a>
+        </li>
+    </ul>
+</div>
+
+<div class="content-block">
+    <h3>7. Examples</h3>
+    <p>You find examples in following projects:</p>
+    <ul class="no-markers">
+        <li>
+            <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a
+                href="https://devstack.vwgroup.com/bitbucket/projects/TNT/repos/tnt-tat-app/browse" target="_blank"
+                rel="noopener noreferrer">VW Tnt (Angular with Akita Store)</a>
+        </li>
+        <li>
+            <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a
+                href="https://github.com/fm-online/fm-website-fe" target="_blank"
+                rel="noopener noreferrer">Finanzmakler.online (Angular with Akita Store)</a>
+        </li>
+        <li>
+            <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a
+                href="https://dev.azure.com/ZEISSgroup/_git/SMT-DESC" target="_blank" rel="noopener noreferrer">Zeiss
+                SMT-DESC (Angular with Akita)</a>
+        </li>
+        <li>
+            <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a
+                href="https://git.testlab.robotronlab.de/robotron/nismo-frontend#" target="_blank"
+                rel="noopener noreferrer">Nismo (React with Redux)</a>
+        </li>
+        <li>
+            <fa-icon [icon]="faHandPointRight" class="link-icon"></fa-icon><a
+                href="https://dev.azure.com/LindeEngineering/Linde%20Virtual%20Furnace/_git/LindeVirtualFurnace"
+                target="_blank" rel="noopener noreferrer">Linde Virtual Furnace (React with Typescript and Redux)</a>
+        </li>
+    </ul>
+</div>

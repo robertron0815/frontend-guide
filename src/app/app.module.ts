@@ -14,6 +14,7 @@ import { JsComponent } from './views/codeConventions/js/js.component';
 import { HeaderComponent } from './components/header/header.component';
 import { OAuthComponent } from './views/examples/o-auth/o-auth.component';
 import { ScssSkillsComponent } from './views/frontendSkills/scss/scss-skills.component';
+import { ReduxComponent } from './views/frontendSkills/redux/redux.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ScssSkillsComponent } from './views/frontendSkills/scss/scss-skills.com
     JsComponent,
     HeaderComponent,
     OAuthComponent,
-    ScssSkillsComponent
+    ScssSkillsComponent,
+    ReduxComponent,
   ],
   imports: [
     BrowserModule,

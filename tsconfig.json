@@ -19,5 +19,8 @@
     {
       "path": "./projects/codeConventions/tsconfig.spec.json"
     }
-]
+  ],
+  "compilerOptions": {
+    "resolveJsonModule": true
+  },
 }

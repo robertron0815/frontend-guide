@@ -1,6 +1,10 @@
 <header>
     <img class="logo" src="assets/images/robotron-logo.svg" alt="robotron frontend guide"/>
-    <h1>Frontend Guide</h1>
+
+    <div class="headline-container">
+        <h1>Frontend Guide</h1>
+        <div class="version">v{{ version }}</div>
+    </div>
 
     <div class="login-state">
         <ng-container *ngIf="(isAuthenticated | async)">
