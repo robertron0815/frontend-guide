@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { CoreModule } from './core/core.module';
 
@@ -37,6 +37,9 @@ import { ReduxComponent } from './views/frontendSkills/redux/redux.component';
   ],
   exports: [RouterModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class AppModule { }
