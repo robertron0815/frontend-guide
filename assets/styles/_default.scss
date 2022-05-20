@@ -1,0 +1,127 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-size: rem-calc(14);
+    color: $primary-color;
+
+    .container {
+        max-width: initial;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cuprum';
+}
+
+h2 {
+    font-size: rem-calc(26);
+}
+
+h3 {
+    font-size: rem-calc(20);
+}
+
+h4 {
+    font-size: rem-calc(17);
+}
+
+p {
+    font-size: rem-calc(14);
+    line-height: rem-calc(20);
+}
+
+a {
+    color: $primary-color;
+}
+
+.content {
+    padding-top: rem-calc(26);
+    max-width: rem-calc(850);
+
+    ul {
+        li {
+            padding: rem-calc(8) 0;
+        }
+
+        ul {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            li {
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        &.no-markers {
+            list-style: none;
+        }
+    }
+
+    .content-block {
+        padding-bottom: rem-calc(40);
+
+        h3 {
+            margin-top: 0;
+        }
+
+        .container-left {
+            width: 50%;
+            height: 100%;
+            padding-right: 10px;
+            float: left;
+        }
+
+        .container-right {
+            width: 50%;
+            height: 100%;
+            padding-left: 10px;
+            float: left;
+        }
+    }
+}
+
+.margin-standard {
+    margin: rem-calc(20) 0;
+}
+
+.margin-top {
+    margin: rem-calc(20) 0 0;
+}
+
+.button {
+    border: 1px solid $gray-color-light;
+    background: $white-color;
+    color: $black-color;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+    &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+    }
+}
+
+figure {
+    margin: 0;
+
+    figcaption {
+        font-size: rem-calc(12);
+    }
+}
+
+.link-icon {
+    padding-right: 7px;
+}

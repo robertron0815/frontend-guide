@@ -1,0 +1,63 @@
+options:
+  formatter: stylish
+files:
+  include: 'src/**/*.s+(a|c)ss'
+  ignore:
+    - 'src/assets/styles/libs/*.scss'
+    - 'src/assets/styles/mixins/*.scss'
+# Rule Configuration
+rules:
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  placeholder-in-extend: 2
+  mixins-before-declarations:
+    - 2
+    -
+      exclude:
+        - breakpoint
+        - mq
+
+  no-warn: 1
+  no-debug: 1
+  no-ids: 2
+  no-important: 2
+  hex-notation:
+    - 2
+    -
+      style: uppercase
+  indentation:
+    - 2
+    -
+      size: 4
+  property-sort-order:
+    - 0
+    -
+      order:
+        - display
+        - margin
+      ignore-custom-properties: true
+  variable-for-property:
+    - 0
+  clean	-import-paths: 0
+  empty-args: 1
+  hex-length: 1
+  leading-zero: 0
+  max-line-length: 0
+  max-file-line-count: 0
+  nesting-depth: 
+    - 1
+    - max-depth: 4
+  pseudo-element: 0
+  quotes: 1
+  shorthand-values: 1
+  url-quotes: 1
+  zero-unit: 1
+  final-newline: 0
+  no-url-domains: 0
+  no-url-protocols: 0
+  no-vendor-prefixes: 1
+  empty-line-between-blocks:
+    - 1
+    -
+      include: true
+      allow-single-line-rulesets: true
